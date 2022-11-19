@@ -1,0 +1,25 @@
+import { TouchableOpacity } from "react-native";
+import styled from "styled-components/native";
+
+export type ButtonStyleProps = 'primary' | 'secondary' ;
+
+type Props = {
+  type: ButtonStyleProps;
+}
+
+export const Container = styled(TouchableOpacity)<Props>`
+  flex: 1;
+  min-height: 56px;
+  max-height: 56px;
+  background-color: ${({ theme, type }) => type === 'primary' ? theme.COLORS.GREEN_700 : theme.COLORS.RED_DARK};
+  justify-content: center;
+  align-items: center;  
+`;
+
+export const Message = styled.Text`
+  text-align: center;
+
+  font-size: ${({ theme }) => theme.FONT_SIZE.SM}px;
+  font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
+  color: ${({ theme }) => theme.COLORS.GRAY_300};
+`;
