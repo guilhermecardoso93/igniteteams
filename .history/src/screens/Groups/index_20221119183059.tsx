@@ -13,10 +13,10 @@ import { Container } from "./styles";
 
 export function Groups() {
   const [groups, setGroups] = useState(["Galera da Rocket!", "Discovery 2022"]);
-  const navigation = useNavigation();
+  const navigation = useNavigation()
 
   function handleNewGroup() {
-    navigation.navigate("new");
+    navigation.navigate('new')
   }
 
   return (

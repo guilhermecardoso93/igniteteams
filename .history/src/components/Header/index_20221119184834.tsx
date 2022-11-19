@@ -8,20 +8,21 @@ type HeaderProps = {
 };
 
 export function Header({ showBackButton = false }: HeaderProps) {
+
   const navigation = useNavigation();
 
   function handleGoBack() {
-    navigation.navigate('groups');
+    navigation.goBack()
   }
 
   return (
     <Container>
       {showBackButton && (
-        <BackButton onPress={handleGoBack}>
+        <BackButton  onPress={handleGoBack}>
           <BackIcon />
         </BackButton>
       )}
-      <Logo source={LogoImg} />
+      <Logo source={LogoImg}/>
     </Container>
   );
 }
